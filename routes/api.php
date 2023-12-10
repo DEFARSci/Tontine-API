@@ -17,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::post("/utilisateur/inscription",[UserController::class,"inscription"]);
-//Route::post("/utilisateur/connexion",[UserController::class,"connexion"]);
+Route::post("/utilisateur/inscription",[UserController::class,"inscription"]);
+Route::post("/utilisateur/connexion",[UserController::class,"connexion"]);
+Route::post("/utilisateur/deconnexion",[UserController::class,"deconnexion"]);
+
 
 Route::get("/membres",[membresController::class,"index" ]);
 Route::post("/membres",[membresController::class,"store" ]);
@@ -34,4 +36,8 @@ Route::delete("/membres/{id}",[membresController::class,"destroy" ]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+    // routes/api.php
+
+
+
 });
